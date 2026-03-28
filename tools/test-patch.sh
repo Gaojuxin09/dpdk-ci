@@ -76,7 +76,7 @@ send_patch_test_report() {
 
 	check_patch_check $pwid "$label"
 
-	from="zhoumin@loongson.cn"
+	from="gaojuxin@loongson.cn"
 	echo "send test report for patch $pwid to $from"
 	$send_patch_report -t "$subject" -f "$from" -m "$msgid" -p "$pwid" \
 		-o "$listid" -l "$label" -s "$status" \
@@ -119,10 +119,10 @@ fi
 export PW_SERVER="https://patches.dpdk.org/api/1.2/"
 export PW_PROJECT=dpdk
 export PW_TOKEN=$(cat $token_file)
-export MAINTAINERS_FILE_PATH=/home/zhoumin/gh_dpdk/MAINTAINERS
+export MAINTAINERS_FILE_PATH=/home/loongson/.dpdk/dpdk/MAINTAINERS
 
 failed=false
-repo=$(timeout -s SIGKILL 30s python3.8 $pw_maintainers_cli --type patch list-trees $series_id) || failed=true
+repo=$(timeout -s SIGKILL 30s python3 $pw_maintainers_cli --type patch list-trees $series_id) || failed=true
 if $failed -o -z "$repo" ; then
 	echo "list trees for series $series_id failed, default to 'dpdk'"
 	repo=dpdk
@@ -137,7 +137,7 @@ if $failed -o -z "$base" ; then
 	exit 1
 fi
 
-DPDK_HOME=/home/zhoumin/$repo
+DPDK_HOME=/home/loongson/.dpdk/dpdk
 if [ ! -d "$DPDK_HOME" ] ; then
 	echo "$DPDK_HOME is not directory"
 	exit 1
@@ -216,7 +216,7 @@ test_report_patch_build_pass $repo $base $base_commit $patch_email $test_report
 send_patch_test_report $patch_email "$label_compilation" $status_success "$desc_build_pass" $test_report
 
 failed=false
-meson test -C build --suite DPDK:fast-tests --test-args="-l 0-7" -t 8 || failed=true
+meson test -C build --suite DPDK:fast-tests --test-args="--no-huge -m 2048 -l 0-7" -t 8 || failed=true
 echo "test done!"
 if $failed ; then
 	echo "unit testing fail"

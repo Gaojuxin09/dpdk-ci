@@ -21,7 +21,7 @@ print_usage () {
 
 
 init_last () {
-	URL=http://patches.dpdk.org/api
+	URL=https://patches.dpdk.org/api
 	URL="${URL}/events/?category=${resource_type}-completed"
 
 	echo `date "+%Y-%m-%dT00:00:00"` > $SINCE_FILE
@@ -84,4 +84,4 @@ setup
 
 $(dirname $(readlink -e $0))/poll-pw $resource_type $project $SINCE_FILE $test_series
 #$(dirname $(readlink -e $0))/poll-file $resource_type $series_id_file $test_series -k
-python3.8 $(dirname $(readlink -e $0))/recheck.py $last_recheck_file $recheck_db_file
+python3 $(dirname $(readlink -e $0))/recheck.py $last_recheck_file $recheck_db_file

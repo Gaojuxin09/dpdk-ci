@@ -4,7 +4,7 @@
 # Copyright 2022 Loongson
 
 prog="dpdk-ci-monitor.sh"
-DPDK_CI=/home/zhoumin/dpdk-ci
+DPDK_CI=/home/loongson/.dpdk/dpdk-ci
 
 echo "Running $(basename $0) at $(date '+%FT%T')"
 

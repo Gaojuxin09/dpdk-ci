@@ -86,7 +86,7 @@ class RerunProcessor:
         self._multipage = multipage
 
     def process_reruns(self) -> None:
-        patchwork_url = f"http://patches.dpdk.org/api/events/?since={self._time_since}"
+        patchwork_url = f"https://patches.dpdk.org/api/events/?since={self._time_since}"
         comment_request_info = []
         for item in [
             "&category=cover-comment-created",

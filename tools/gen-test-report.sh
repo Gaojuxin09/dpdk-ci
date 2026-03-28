@@ -40,12 +40,12 @@ write_env_result_compilation_fail() {
 	+---------------------+----------------+
 	|     Environment     | compilation    |
 	+---------------------+----------------+
-	| Loongnix-Server 8.3 | FAIL           |
+	| Loongnix-Server 23.2 | FAIL           |
 	+---------------------+----------------+
 
-	Loongnix-Server 8.3
-	    Kernel: 4.19.190+
-	    Compiler: gcc 8.3
+	Loongnix-Server 23.2
+	    Kernel: 6.6.52-1.10.lns23.loongarch64
+	    Compiler: gcc 12.3
 
 
 	END_OF_HELP
@@ -58,12 +58,12 @@ write_env_result_compilation_pass() {
 	+---------------------+----------------+
 	|     Environment     | compilation    |
 	+---------------------+----------------+
-	| Loongnix-Server 8.3 | PASS           |
+	| Loongnix-Server 23.2 | PASS           |
 	+---------------------+----------------+
 
-	Loongnix-Server 8.3
-	    Kernel: 4.19.190+
-	    Compiler: gcc 8.3
+	Loongnix-Server 23.2
+	    Kernel: 6.6.52-1.10.lns23.loongarch64
+	    Compiler: gcc 12.3
 
 
 	END_OF_HELP
@@ -76,12 +76,12 @@ write_env_result_unit_test_fail() {
 	+---------------------+----------------+
 	|     Environment     | dpdk_unit_test |
 	+---------------------+----------------+
-	| Loongnix-Server 8.3 | FAIL           |
+	| Loongnix-Server 23.2 | FAIL           |
 	+---------------------+----------------+
 
-	Loongnix-Server 8.3
-	    Kernel: 4.19.190+
-	    Compiler: gcc 8.3
+	Loongnix-Server 23.2
+	    Kernel: 6.6.52-1.10.lns23.loongarch64
+	    Compiler: gcc 12.3
 
 
 	END_OF_HELP
@@ -94,12 +94,12 @@ write_env_result_unit_test_pass() {
 	+---------------------+----------------+
 	|     Environment     | dpdk_unit_test |
 	+---------------------+----------------+
-	| Loongnix-Server 8.3 | PASS           |
+	| Loongnix-Server 23.2 | PASS           |
 	+---------------------+----------------+
 
-	Loongnix-Server 8.3
-	    Kernel: 4.19.190+
-	    Compiler: gcc 8.3
+	Loongnix-Server 23.2
+	    Kernel: 6.6.52-1.10.lns23.loongarch64
+	    Compiler: gcc 12.3
 
 
 	END_OF_HELP

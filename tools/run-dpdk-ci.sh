@@ -1,7 +1,7 @@
 #!/bin/sh -e
 
 prog="loongarch-dpdk-ci.sh"
-DPDK_CI=/home/zhoumin/dpdk-ci
+DPDK_CI=/home/loongson/.dpdk/dpdk-ci
 
 ci_is_running() {
 	num=$(ps -ef | grep $prog | grep -v grep | grep -v vim | wc -l)

@@ -1,0 +1,31 @@
+Content-Type: text/plain; charset="utf-8"
+Subject: |SUCCESS| pw162755-162760 [PATCH v11 6/6] MAINTAINERS: add section for AI review tools
+In-Reply-To: <20260327154321.25800-7-stephen@networkplumber.org>
+References: <20260327154321.25800-7-stephen@networkplumber.org>
+To: test-report@dpdk.org
+
+Test-Label: loongarch-compilation
+Test-Status: SUCCESS
+http://dpdk.org/patch/162760
+
+_Compilation OK_
+
+Submitter: Stephen Hemminger <stephen@networkplumber.org>
+Date: Fri, 27 Mar 2026 08:41:52 -0700
+DPDK git baseline: Repo:dpdk
+  Branch: main
+  CommitID: 626d4e39327333cd5508885162e45ca7fb94ef7f
+
+162755-162760 --> meson & ninja build successfully
+
+Test environment and result as below:
+
++---------------------+----------------+
+|     Environment     | compilation    |
++---------------------+----------------+
+| Loongnix-Server 23.2 | PASS           |
++---------------------+----------------+
+
+Loongnix-Server 23.2
+    Kernel: 6.6.52-1.10.lns23.loongarch64
+    Compiler: gcc 12.3

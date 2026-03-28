@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # Copyright 2022 Loongson
 
-URL=http://patches.dpdk.org/api
+URL=https://patches.dpdk.org/api
 verbose=false
 
 print_usage() {

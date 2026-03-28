@@ -1,0 +1,31 @@
+Content-Type: text/plain; charset="utf-8"
+Subject: |SUCCESS| pw162762 [PATCH v1] doc: update release notes for 26.03
+In-Reply-To: <20260327193034.2700185-1-john.mcnamara@intel.com>
+References: <20260327193034.2700185-1-john.mcnamara@intel.com>
+To: test-report@dpdk.org
+
+Test-Label: loongarch-compilation
+Test-Status: SUCCESS
+http://dpdk.org/patch/162762
+
+_Compilation OK_
+
+Submitter: John McNamara <john.mcnamara@intel.com>
+Date: Fri, 27 Mar 2026 19:30:23 +0000
+DPDK git baseline: Repo:dpdk
+  Branch: main
+  CommitID: 626d4e39327333cd5508885162e45ca7fb94ef7f
+
+162762 --> meson & ninja build successfully
+
+Test environment and result as below:
+
++---------------------+----------------+
+|     Environment     | compilation    |
++---------------------+----------------+
+| Loongnix-Server 23.2 | PASS           |
++---------------------+----------------+
+
+Loongnix-Server 23.2
+    Kernel: 6.6.52-1.10.lns23.loongarch64
+    Compiler: gcc 12.3

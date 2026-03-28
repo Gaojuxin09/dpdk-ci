@@ -1,0 +1,31 @@
+Content-Type: text/plain; charset="utf-8"
+Subject: |SUCCESS| pw162761 [PATCH v1] dts: add ipgre test suite
+In-Reply-To: <20260327180232.443820-1-abailey@iol.unh.edu>
+References: <20260327180232.443820-1-abailey@iol.unh.edu>
+To: test-report@dpdk.org
+
+Test-Label: loongarch-compilation
+Test-Status: SUCCESS
+http://dpdk.org/patch/162761
+
+_Compilation OK_
+
+Submitter: Andrew Bailey <abailey@iol.unh.edu>
+Date: Fri, 27 Mar 2026 14:02:32 -0400
+DPDK git baseline: Repo:dpdk-next-dts
+  Branch: main
+  CommitID: 626d4e39327333cd5508885162e45ca7fb94ef7f
+
+162761 --> meson & ninja build successfully
+
+Test environment and result as below:
+
++---------------------+----------------+
+|     Environment     | compilation    |
++---------------------+----------------+
+| Loongnix-Server 23.2 | PASS           |
++---------------------+----------------+
+
+Loongnix-Server 23.2
+    Kernel: 6.6.52-1.10.lns23.loongarch64
+    Compiler: gcc 12.3

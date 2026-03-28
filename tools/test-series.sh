@@ -122,8 +122,8 @@ try_apply() {
 	fi
 
 	# Use the DPDK github mirrors as the remote repo
-	# DPDK_HOME=/home/zhoumin/$repo
-	DPDK_HOME=/home/zhoumin/gh_dpdk
+	# DPDK_HOME=/home/loongson/.dpdk/dpdk
+	DPDK_HOME=/home/loongson/.dpdk/dpdk
 	if [ ! -d "$DPDK_HOME" ] ; then
 		echo "$DPDK_HOME is not directory"
 		exit 1
@@ -266,12 +266,12 @@ fi
 export PW_SERVER="https://patches.dpdk.org/api/1.2/"
 export PW_PROJECT=dpdk
 export PW_TOKEN=$(cat $token_file)
-export MAINTAINERS_FILE_PATH=/home/zhoumin/gh_dpdk/MAINTAINERS
+export MAINTAINERS_FILE_PATH=/home/loongson/.dpdk/dpdk/MAINTAINERS
 
 default_repo=dpdk
 
 failed=false
-repo=$(timeout -s SIGKILL 120s python3.8 $pw_maintainers_cli --type series list-trees $series_id) || failed=true
+repo=$(timeout -s SIGKILL 120s python3 $pw_maintainers_cli --type series list-trees $series_id) || failed=true
 if $failed ; then
 	echo "list trees for series $series_id timeout, exit ..."
 	exit 1
@@ -341,7 +341,7 @@ test_report_series_build_pass $repo $ori_base $base_commit $patches_dir $test_re
 send_series_test_report $series_id $patches_dir "$label_compilation" $status_success "$desc_build_pass" $test_report $build_mail
 
 failed=false
-meson test -C build --suite DPDK:fast-tests --test-args="-l 0-7" -t 20 || failed=true
+meson test -C build --suite DPDK:fast-tests --test-args="--no-huge -m 2048 -l 0-7" -t 20 || failed=true
 echo "test done!"
 if $failed ; then
 	echo "unit testing fail"

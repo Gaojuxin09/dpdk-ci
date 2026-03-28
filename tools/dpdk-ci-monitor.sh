@@ -31,7 +31,7 @@ check_test_results=$(dirname $(readlink -e $0))/../tools/check_test_results.py
 project=DPDK
 resource_type=series
 
-URL=http://patches.dpdk.org/api
+URL=https://patches.dpdk.org/api
 URL="${URL}/events/?category=${resource_type}-completed"
 
 label_compilation="loongarch compilation"
@@ -61,7 +61,7 @@ check_series_test_report() {
 		return 1
 	fi
 
-	url=http://patches.dpdk.org/api/series/$series_id
+	url=https://patches.dpdk.org/api/series/$series_id
 	echo "$(basename $0): request "$url" to get submitted time"
 
 	failed=false
@@ -152,7 +152,7 @@ check_series_test_report() {
 	else
 		found=false
 		echo "$label_compilation not found, notifying zhoumin ..."
-		echo "http://patches.dpdk.org/project/dpdk/list/?series=$series_id&archive=both&state=*" >> $tmp_file
+		echo "https://patches.dpdk.org/project/dpdk/list/?series=$series_id&archive=both&state=*" >> $tmp_file
 		write_series_url=true
 		echo "$label_compilation not found for pwid $last_pwid: http://dpdk.org/patch/$last_pwid" >> $tmp_file
 
@@ -176,7 +176,7 @@ check_series_test_report() {
 		found=false
 		echo "$label_unit_testing not found, notifying zhoumin ..."
 		if ! $write_series_url ; then
-			echo "http://patches.dpdk.org/project/dpdk/list/?series=$series_id&archive=both&state=*" >> $tmp_file
+			echo "https://patches.dpdk.org/project/dpdk/list/?series=$series_id&archive=both&state=*" >> $tmp_file
 		fi
 		echo "$label_unit_testing not found for pwid $last_pwid: http://dpdk.org/patch/$last_pwid" >> $tmp_file
 
@@ -258,12 +258,12 @@ done
 
 if test -s $tmp_file ; then
 	(
-	writeheaders "Test reports not found!" 'maobibo@loongson.cn' 'lixianglai@loongson.cn'
+	writeheaders "Test reports not found!" 'gaojuxin@loongson.cn' 'wangming01@loongson.cn'
 	cat $tmp_file
 	) | $sendmail -f"$smtp_user" -t
 else
 	(
-	writeheaders "No missed test report found!" 'maobibo@loongson.cn' 'lixianglai@loongson.cn'
+	writeheaders "No missed test report found!" 'gaojuxin@loongson.cn' 'wangming01@loongson.cn'
 	echo "No missed test report found!"
 	) | $sendmail -f"$smtp_user" -t
 	echo "No missed test report found!"
@@ -273,12 +273,12 @@ fi
 timeout -s SIGKILL 600s python3 $check_test_results $pre $tmp_file
 if test -s $tmp_file ; then
 	(
-	writeheaders "Summaries for test results" 'maobibo@loongson.cn' 'lixianglai@loongson.cn'
+	writeheaders "Summaries for test results" 'gaojuxin@loongson.cn' 'wangming01@loongson.cn'
 	cat $tmp_file
 	) | $sendmail -f"$smtp_user" -t
 else
 	(
-	writeheaders "Get summaries failed for test results!" 'maobibo@loonson.cn' 'lixianglai@loongson.cn'
+	writeheaders "Get summaries failed for test results!" 'gaojuxin@loonson.cn' 'wangming01@loongson.cn'
 	echo "Get summaries failed for test results!"
 	) | $sendmail -f"$smtp_user" -t
 	echo "Get summaries failed for test results!"

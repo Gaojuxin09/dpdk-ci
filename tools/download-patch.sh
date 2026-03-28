@@ -32,8 +32,8 @@ if [ -z "$pwid" ] ; then
 fi
 
 if $http_get ; then
-	url="http://patches.dpdk.org/patch/$pwid/mbox/"
+	url="https://patches.dpdk.org/patch/$pwid/mbox/"
 	timeout -s SIGKILL 120s curl -sfL $url
 else
-	timeout -s SIGKILL 120s python3.8 $pwclient view $pwid
+	timeout -s SIGKILL 120s python3 $pwclient view $pwid
 fi

@@ -26,7 +26,7 @@ def try_request(url, retry=3):
     return None
 
 def get_patch_checks(pid):
-    url = "http://patches.dpdk.org/api/patches/" + str(pid) + "/checks/"
+    url = "https://patches.dpdk.org/api/patches/" + str(pid) + "/checks/"
     print(url)
     data = try_request(url)
     if data == None:
@@ -39,7 +39,7 @@ def get_patch_url(pid):
     return "http://dpdk.org/patch/" + str(pid)
 
 def get_series_url(sid):
-    return "http://patches.dpdk.org/project/dpdk/list/?series=" + str(sid) + "&archive=both&state=*"
+    return "https://patches.dpdk.org/project/dpdk/list/?series=" + str(sid) + "&archive=both&state=*"
 
 class Series:
     def __init__(self, sid = -1, patches = [], c_time = 0, valid = False, message=""):
@@ -115,7 +115,7 @@ def get_series_ids(pre_days):
     since = today - timedelta(pre_days)
     page = 1
     series_ids = []
-    URL = "http://patches.dpdk.org/api/events/?category=series-completed"
+    URL = "https://patches.dpdk.org/api/events/?category=series-completed"
 
     while True:
         url = URL + "&page=" + str(page) + "&since=" + since.strftime("%Y-%m-%dT%H:%M:%S")
@@ -141,7 +141,7 @@ def get_series_ids(pre_days):
     return series_ids
 
 def get_series_by_id(sid):
-    url = "http://patches.dpdk.org/api/series/" + str(sid)
+    url = "https://patches.dpdk.org/api/series/" + str(sid)
     print(url)
     data = try_request(url)
     if data == None:

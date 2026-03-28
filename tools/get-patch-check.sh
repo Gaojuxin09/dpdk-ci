@@ -29,7 +29,7 @@ if [ -z "$pwid" ] ; then
 	exit 1
 fi
 
-URL=http://patches.dpdk.org/api/patches/$pwid/checks/
+URL=https://patches.dpdk.org/api/patches/$pwid/checks/
 if $verbose ; then
 	echo "request: $URL"
 fi

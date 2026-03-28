@@ -112,7 +112,7 @@ def main():
     print("recheck file: " + recheck_file)
 
     try:
-        p = subprocess.run(['/usr/bin/python3.8', script_path, '-ts', ts, '--contexts', 'loongarch-compilation',
+        p = subprocess.run(['/usr/bin/python3', script_path, '-ts', ts, '--contexts', 'loongarch-compilation',
             'loongarch-unit-testing', '-o', recheck_file], capture_output=True, timeout=240)
     except subprocess.TimeoutExpired:
         print("get reruns timeout!")

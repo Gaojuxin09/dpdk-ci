@@ -129,8 +129,8 @@ try_apply() {
 	echo "Final base: $base"
 
 	# Use the DPDK github mirrors as the remote repo
-	# DPDK_HOME=/home/zhoumin/$repo
-	DPDK_HOME=/home/zhoumin/gh_dpdk
+	# DPDK_HOME=/home/loongson/.dpdk/dpdk
+	DPDK_HOME=/home/loongson/.dpdk/dpdk
 	if [ ! -d "$DPDK_HOME" ] ; then
 		echo "$DPDK_HOME is not directory"
 		exit 1
@@ -292,12 +292,12 @@ fi
 export PW_SERVER="https://patches.dpdk.org/api/1.2/"
 export PW_PROJECT=dpdk
 export PW_TOKEN=$(cat $token_file)
-export MAINTAINERS_FILE_PATH=/home/zhoumin/gh_dpdk/MAINTAINERS
+export MAINTAINERS_FILE_PATH=/home/loongson/.dpdk/dpdk/MAINTAINERS
 
 default_repo=dpdk
 
 failed=false
-repo=$(timeout -s SIGKILL 120s python3.8 $pw_maintainers_cli --type series list-trees $series_id) || failed=true
+repo=$(timeout -s SIGKILL 120s python3 $pw_maintainers_cli --type series list-trees $series_id) || failed=true
 if $failed ; then
 	echo "list trees for series $series_id timeout, exit ..."
 	exit 1

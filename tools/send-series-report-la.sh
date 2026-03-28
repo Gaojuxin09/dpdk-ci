@@ -75,7 +75,7 @@ if [ -t 0 ] ; then
 fi
 report=$(cat)
 
-ci_maintainer="maobibo@loongson.cn"
+ci_maintainer="gaojuxin@loongson.cn"
 
 writeheaders () # <subject> <ref> <to> [cc]
 {
@@ -98,7 +98,7 @@ writeheadlines () # <label> <status> <description> [pwid]
 	echo
 }
 
-smtp_user="qemudev@loongson.cn"
+smtp_user="gaojuxin@loongson.cn"
 
 if echo "$listid" | grep -q 'dev.dpdk.org' ; then
 	# get patchwork id

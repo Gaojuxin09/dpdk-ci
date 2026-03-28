@@ -16,10 +16,10 @@ def print_line(title, char):
         width = 20
 
     line = ""
-    for i in range(0, width):
+    for i in range(0, int(width)):
         line += char
     line += title
-    for i in range(0, width):
+    for i in range(0, int(width)):
         line += char
 
     print(line)

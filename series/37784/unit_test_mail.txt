@@ -1,0 +1,1340 @@
+Content-Type: text/plain; charset="utf-8"
+Subject: |FAILURE| pw162761 [PATCH v1] dts: add ipgre test suite
+In-Reply-To: <20260327180232.443820-1-abailey@iol.unh.edu>
+References: <20260327180232.443820-1-abailey@iol.unh.edu>
+To: test-report@dpdk.org
+Cc: Andrew Bailey <abailey@iol.unh.edu>, maobibo@loongson.cn
+
+Test-Label: loongarch-unit-testing
+Test-Status: FAILURE
+http://dpdk.org/patch/162761
+
+_Unit Testing FAIL_
+
+Submitter: Andrew Bailey <abailey@iol.unh.edu>
+Date: Fri, 27 Mar 2026 14:02:32 -0400
+DPDK git baseline: Repo:dpdk-next-dts
+  Branch: main
+  CommitID: 626d4e39327333cd5508885162e45ca7fb94ef7f
+
+162761 --> testing fail
+
+Test environment and result as below:
+
++---------------------+----------------+
+|     Environment     | dpdk_unit_test |
++---------------------+----------------+
+| Loongnix-Server 23.2 | FAIL           |
++---------------------+----------------+
+
+Loongnix-Server 23.2
+    Kernel: 6.6.52-1.10.lns23.loongarch64
+    Compiler: gcc 12.3
+
+
+Test result details:
+  1/143 DPDK:fast-tests / acl_autotest                                      OK              3.27s
+  2/143 DPDK:fast-tests / alarm_autotest                                    OK              1.47s
+  3/143 DPDK:fast-tests / argparse_autotest                                 OK              0.47s
+  4/143 DPDK:fast-tests / atomic_autotest                                   FAIL            0.06s   exit status 255
+  5/143 DPDK:fast-tests / bitcount_autotest                                 OK              0.40s
+  6/143 DPDK:fast-tests / bitmap_autotest                                   OK              0.47s
+  7/143 DPDK:fast-tests / bitops_autotest                                   OK              1.96s
+  8/143 DPDK:fast-tests / bitset_autotest                                   OK              4.62s
+  9/143 DPDK:fast-tests / bitratestats_autotest                             OK              0.50s
+ 10/143 DPDK:fast-tests / bpf_no_instructions_autotest                      OK              0.46s
+ 11/143 DPDK:fast-tests / bpf_exit_only_autotest                            OK              0.47s
+ 12/143 DPDK:fast-tests / bpf_no_exit_autotest                              OK              0.46s
+ 13/143 DPDK:fast-tests / bpf_minimal_working_autotest                      OK              0.47s
+ 14/143 DPDK:fast-tests / bpf_add_one_autotest                              OK              0.46s
+ 15/143 DPDK:fast-tests / bpf_subtract_one_autotest                         OK              0.39s
+ 16/143 DPDK:fast-tests / bpf_jump_over_invalid_first_autotest              OK              0.47s
+ 17/143 DPDK:fast-tests / bpf_jump_over_invalid_non_first_autotest          OK              0.33s
+ 18/143 DPDK:fast-tests / bpf_autotest                                      OK              0.56s
+ 19/143 DPDK:fast-tests / bpf_stack_alignment_autotest                      SKIP            0.48s   exit status 77
+ 20/143 DPDK:fast-tests / bpf_stack_copy_uint128_autotest                   SKIP            0.46s   exit status 77
+ 21/143 DPDK:fast-tests / bpf_stack_sse2_autotest                           SKIP            0.45s   exit status 77
+ 22/143 DPDK:fast-tests / bpf_stack_memcpy_autotest                         SKIP            0.47s   exit status 77
+ 23/143 DPDK:fast-tests / bpf_elf_autotest                                  SKIP            0.47s   exit status 77
+ 24/143 DPDK:fast-tests / bpf_convert_autotest                              OK              0.48s
+ 25/143 DPDK:fast-tests / bpf_xadd32_autotest                               OK              0.49s
+ 26/143 DPDK:fast-tests / bpf_xadd64_autotest                               OK              0.34s
+ 27/143 DPDK:fast-tests / bpf_xchg32_autotest                               OK              0.36s
+ 28/143 DPDK:fast-tests / bpf_xchg64_autotest                               OK              0.46s
+ 29/143 DPDK:fast-tests / bpf_atomic_imms_autotest                          OK              0.48s
+ 30/143 DPDK:fast-tests / byteorder_autotest                                OK              0.43s
+ 31/143 DPDK:fast-tests / cfgfile_autotest                                  OK              0.34s
+ 32/143 DPDK:fast-tests / cksum_autotest                                    OK              0.39s
+ 33/143 DPDK:fast-tests / cmdline_autotest                                  OK              0.46s
+ 34/143 DPDK:fast-tests / common_autotest                                   OK              1.04s
+ 35/143 DPDK:fast-tests / compressdev_autotest                              FAIL            0.07s   exit status 255
+ 36/143 DPDK:fast-tests / cpuflags_autotest                                 OK              0.55s
+ 37/143 DPDK:fast-tests / crc_autotest                                      OK              0.55s
+ 38/143 DPDK:fast-tests / user_delay_us                                     OK              0.47s
+ 39/143 DPDK:fast-tests / debug_autotest                                    OK              3.34s
+ 40/143 DPDK:fast-tests / devargs_autotest                                  OK              0.47s
+ 41/143 DPDK:fast-tests / dispatcher_autotest                               FAIL            0.06s   exit status 255
+ 42/143 DPDK:fast-tests / distributor_autotest                              FAIL            0.06s   exit status 255
+ 43/143 DPDK:fast-tests / eal_flags_c_opt_autotest                          FAIL            0.06s   exit status 255
+ 44/143 DPDK:fast-tests / eal_flags_main_opt_autotest                       FAIL            0.06s   exit status 255
+ 45/143 DPDK:fast-tests / eal_flags_n_opt_autotest                          FAIL            0.06s   exit status 255
+ 46/143 DPDK:fast-tests / eal_flags_hpet_autotest                           FAIL            0.06s   exit status 255
+ 47/143 DPDK:fast-tests / eal_flags_no_huge_autotest                        FAIL            0.06s   exit status 255
+ 48/143 DPDK:fast-tests / eal_flags_a_opt_autotest                          FAIL            0.06s   exit status 255
+ 49/143 DPDK:fast-tests / eal_flags_b_opt_autotest                          FAIL            0.06s   exit status 255
+ 50/143 DPDK:fast-tests / eal_flags_vdev_opt_autotest                       FAIL            0.06s   exit status 255
+ 51/143 DPDK:fast-tests / eal_flags_r_opt_autotest                          FAIL            0.06s   exit status 255
+ 52/143 DPDK:fast-tests / eal_flags_mem_autotest                            FAIL            0.06s   exit status 255
+ 53/143 DPDK:fast-tests / eal_flags_file_prefix_autotest                    FAIL            0.06s   exit status 255
+ 54/143 DPDK:fast-tests / eal_flags_misc_autotest                           FAIL            0.06s   exit status 255
+ 55/143 DPDK:fast-tests / eal_fs_autotest                                   OK              0.46s
+ 56/143 DPDK:fast-tests / errno_autotest                                    OK              0.47s
+ 57/143 DPDK:fast-tests / ethdev_link_status                                OK              0.47s
+ 58/143 DPDK:fast-tests / event_eth_tx_adapter_autotest                     FAIL            0.06s   exit status 255
+ 59/143 DPDK:fast-tests / event_ring_autotest                               OK              0.46s
+ 60/143 DPDK:fast-tests / eventdev_common_autotest                          OK              0.38s
+ 61/143 DPDK:fast-tests / eventdev_selftest_sw                              OK              6.71s
+ 62/143 DPDK:fast-tests / external_mem_autotest                             FAIL            0.06s   exit status 255
+ 63/143 DPDK:fast-tests / fbarray_autotest                                  OK              0.47s
+ 64/143 DPDK:fast-tests / fib_autotest                                      OK              1.54s
+ 65/143 DPDK:fast-tests / fib6_autotest                                     OK              1.55s
+ 66/143 DPDK:fast-tests / func_reentrancy_autotest                          FAIL            0.06s   exit status 255
+ 67/143 DPDK:fast-tests / graph_autotest                                    OK              0.38s
+ 68/143 DPDK:fast-tests / node_list_dump                                    OK              0.46s
+ 69/143 DPDK:fast-tests / graph_feature_arc_autotest                        OK              0.47s
+ 70/143 DPDK:fast-tests / hash_autotest                                     OK              1.32s
+ 71/143 DPDK:fast-tests / hash_readwrite_func_autotest                      FAIL            0.06s   exit status 255
+ 72/143 DPDK:fast-tests / interrupt_autotest                                OK              1.70s
+ 73/143 DPDK:fast-tests / ipfrag_autotest                                   FAIL            0.06s   exit status 255
+ 74/143 DPDK:fast-tests / ipsec_autotest                                    SKIP            0.37s   exit status 77
+ 75/143 DPDK:fast-tests / ipsec_sad_autotest                                OK              0.94s
+ 76/143 DPDK:fast-tests / kvargs_autotest                                   OK              0.38s
+ 77/143 DPDK:fast-tests / latencystats_autotest                             OK              0.39s
+ 78/143 DPDK:fast-tests / lcore_var_autotest                                OK              0.63s
+ 79/143 DPDK:fast-tests / lcores_autotest                                   OK              0.57s
+ 80/143 DPDK:fast-tests / logs_autotest                                     OK              0.47s
+ 81/143 DPDK:fast-tests / lpm_autotest                                      OK              3.34s
+ 82/143 DPDK:fast-tests / lpm6_autotest                                     OK              6.91s
+ 83/143 DPDK:fast-tests / malloc_autotest                                   FAIL            0.06s   exit status 255
+ 84/143 DPDK:fast-tests / mbuf_autotest                                     FAIL            0.06s   exit status 255
+ 85/143 DPDK:fast-tests / mcslock_autotest                                  FAIL            0.06s   exit status 255
+ 86/143 DPDK:fast-tests / member_autotest                                   OK              2.17s
+ 87/143 DPDK:fast-tests / memcpy_autotest                                   OK              1.07s
+ 88/143 DPDK:fast-tests / memory_autotest                                   FAIL            0.06s   exit status 255
+ 89/143 DPDK:fast-tests / mempool_autotest                                  FAIL            0.06s   exit status 255
+ 90/143 DPDK:fast-tests / memzone_autotest                                  FAIL            0.06s   exit status 255
+ 91/143 DPDK:fast-tests / meter_autotest                                    OK              0.52s
+ 92/143 DPDK:fast-tests / metrics_autotest                                  OK              0.47s
+ 93/143 DPDK:fast-tests / multiprocess_autotest                             FAIL            0.07s   exit status 255
+ 94/143 DPDK:fast-tests / net_ether_autotest                                OK              1.09s
+ 95/143 DPDK:fast-tests / net_ipv6_autotest                                 OK              0.46s
+ 96/143 DPDK:fast-tests / pcapng_autotest                                   OK              3.89s
+ 97/143 DPDK:fast-tests / pdcp_autotest                                     FAIL            0.06s   exit status 255
+ 98/143 DPDK:fast-tests / pdump_autotest                                    OK              0.57s
+ 99/143 DPDK:fast-tests / per_lcore_autotest                                OK              0.57s
+100/143 DPDK:fast-tests / pflock_autotest                                   OK              1.25s
+101/143 DPDK:fast-tests / pie_autotest                                      OK              0.46s
+102/143 DPDK:fast-tests / ring_pmd_autotest                                 OK              0.47s
+103/143 DPDK:fast-tests / tap_pmd_autotest                                  SKIP            0.48s   exit status 77
+104/143 DPDK:fast-tests / power_autotest                                    OK              0.47s
+105/143 DPDK:fast-tests / power_cpufreq_autotest                            FAIL            0.06s   exit status 255
+106/143 DPDK:fast-tests / power_caps_autotest                               SKIP            0.31s   exit status 77
+107/143 DPDK:fast-tests / power_intel_uncore_autotest                       SKIP            0.47s   exit status 77
+108/143 DPDK:fast-tests / power_kvm_vm_autotest                             FAIL            0.06s   exit status 255
+109/143 DPDK:fast-tests / prefetch_autotest                                 OK              0.33s
+110/143 DPDK:fast-tests / ptr_compress_autotest                             OK              0.39s
+111/143 DPDK:fast-tests / rawdev_autotest                                   OK              0.39s
+112/143 DPDK:fast-tests / rcu_qsbr_autotest                                 OK              0.88s
+113/143 DPDK:fast-tests / reorder_autotest                                  OK              0.45s
+114/143 DPDK:fast-tests / rib_autotest                                      OK              9.84s
+115/143 DPDK:fast-tests / rib6_autotest                                     OK              9.84s
+116/143 DPDK:fast-tests / ring_autotest                                     OK              0.41s
+117/143 DPDK:fast-tests / rwlock_test1_autotest                             OK              1.13s
+118/143 DPDK:fast-tests / rwlock_rda_autotest                               OK              5.46s
+119/143 DPDK:fast-tests / rwlock_rds_wrm_autotest                           OK              5.50s
+120/143 DPDK:fast-tests / rwlock_rde_wro_autotest                           OK              5.46s
+121/143 DPDK:fast-tests / sched_autotest                                    OK              0.42s
+122/143 DPDK:fast-tests / security_autotest                                 FAIL            0.06s   exit status 255
+123/143 DPDK:fast-tests / seqlock_autotest                                  OK              2.46s
+124/143 DPDK:fast-tests / service_autotest                                  OK              3.09s
+125/143 DPDK:fast-tests / soring_autotest                                   OK              0.40s
+126/143 DPDK:fast-tests / spinlock_autotest                                 OK              0.57s
+127/143 DPDK:fast-tests / stack_autotest                                    FAIL            0.07s   exit status 255
+128/143 DPDK:fast-tests / stack_lf_autotest                                 FAIL            0.06s   exit status 255
+129/143 DPDK:fast-tests / string_autotest                                   OK              0.38s
+130/143 DPDK:fast-tests / table_autotest                                    OK              8.47s
+131/143 DPDK:fast-tests / tailq_autotest                                    OK              0.45s
+132/143 DPDK:fast-tests / telemetry_data_autotest                           OK              0.50s
+133/143 DPDK:fast-tests / telemetry_json_autotest                           OK              0.45s
+134/143 DPDK:fast-tests / thash_autotest                                    OK              0.48s
+135/143 DPDK:fast-tests / threads_autotest                                  OK              0.54s
+136/143 DPDK:fast-tests / ticketlock_autotest                               OK              0.65s
+137/143 DPDK:fast-tests / timer_autotest                                    FAIL            0.06s   exit status 255
+138/143 DPDK:fast-tests / timer_secondary_autotest                          FAIL            0.06s   exit status 255
+139/143 DPDK:fast-tests / trace_autotest                                    OK              0.39s
+140/143 DPDK:fast-tests / trace_autotest_with_traces                        OK              0.48s
+141/143 DPDK:fast-tests / vdev_autotest                                     OK              0.49s
+142/143 DPDK:fast-tests / version_autotest                                  OK              0.46s
+143/143 DPDK:fast-tests / telemetry_all                                     OK             23.05s
+
+
+Ok:                 98
+Expected Fail:      0
+Fail:               36
+Unexpected Pass:    0
+Skipped:            9
+Timeout:            0
+
+
+
+Test logs for failed test cases:
+================================================================================
+DPDK:fast-tests / atomic_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/atomic_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/atomic_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/atomic_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/atomic_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/atomic_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/atomic_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/atomic_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/atomic_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/atomic_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / compressdev_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/compressdev_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/compressdev_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/compressdev_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/compressdev_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/compressdev_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/compressdev_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/compressdev_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/compressdev_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/compressdev_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / dispatcher_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/dispatcher_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/dispatcher_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/dispatcher_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/dispatcher_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/dispatcher_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/dispatcher_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/dispatcher_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/dispatcher_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/dispatcher_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / distributor_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/distributor_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/distributor_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/distributor_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/distributor_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/distributor_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/distributor_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/distributor_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/distributor_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/distributor_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / eal_flags_c_opt_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/eal_flags_c_opt_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_c_opt_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_c_opt_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_c_opt_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_c_opt_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_c_opt_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_c_opt_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_c_opt_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_c_opt_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / eal_flags_main_opt_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/eal_flags_main_opt_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_main_opt_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_main_opt_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_main_opt_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_main_opt_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_main_opt_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_main_opt_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_main_opt_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_main_opt_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / eal_flags_n_opt_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/eal_flags_n_opt_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_n_opt_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_n_opt_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_n_opt_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_n_opt_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_n_opt_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_n_opt_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_n_opt_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_n_opt_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / eal_flags_hpet_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/eal_flags_hpet_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_hpet_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_hpet_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_hpet_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_hpet_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_hpet_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_hpet_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_hpet_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_hpet_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / eal_flags_no_huge_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/eal_flags_no_huge_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_no_huge_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_no_huge_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_no_huge_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_no_huge_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_no_huge_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_no_huge_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_no_huge_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_no_huge_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / eal_flags_a_opt_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/eal_flags_a_opt_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_a_opt_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_a_opt_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_a_opt_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_a_opt_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_a_opt_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_a_opt_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_a_opt_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_a_opt_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / eal_flags_b_opt_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/eal_flags_b_opt_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_b_opt_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_b_opt_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_b_opt_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_b_opt_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_b_opt_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_b_opt_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_b_opt_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_b_opt_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / eal_flags_vdev_opt_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/eal_flags_vdev_opt_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_vdev_opt_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_vdev_opt_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_vdev_opt_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_vdev_opt_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_vdev_opt_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_vdev_opt_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_vdev_opt_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_vdev_opt_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / eal_flags_r_opt_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/eal_flags_r_opt_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_r_opt_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_r_opt_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_r_opt_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_r_opt_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_r_opt_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_r_opt_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_r_opt_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_r_opt_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / eal_flags_mem_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/eal_flags_mem_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_mem_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_mem_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_mem_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_mem_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_mem_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_mem_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_mem_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_mem_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / eal_flags_file_prefix_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/eal_flags_file_prefix_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_file_prefix_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_file_prefix_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_file_prefix_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_file_prefix_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_file_prefix_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_file_prefix_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_file_prefix_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_file_prefix_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / eal_flags_misc_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/eal_flags_misc_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_misc_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_misc_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_misc_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_misc_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_misc_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_misc_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_misc_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/eal_flags_misc_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / event_eth_tx_adapter_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/event_eth_tx_adapter_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/event_eth_tx_adapter_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/event_eth_tx_adapter_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/event_eth_tx_adapter_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/event_eth_tx_adapter_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/event_eth_tx_adapter_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/event_eth_tx_adapter_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/event_eth_tx_adapter_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/event_eth_tx_adapter_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / external_mem_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/external_mem_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/external_mem_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/external_mem_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/external_mem_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/external_mem_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/external_mem_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/external_mem_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/external_mem_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/external_mem_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / func_reentrancy_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/func_reentrancy_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/func_reentrancy_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/func_reentrancy_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/func_reentrancy_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/func_reentrancy_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/func_reentrancy_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/func_reentrancy_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/func_reentrancy_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/func_reentrancy_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / hash_readwrite_func_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/hash_readwrite_func_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/hash_readwrite_func_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/hash_readwrite_func_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/hash_readwrite_func_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/hash_readwrite_func_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/hash_readwrite_func_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/hash_readwrite_func_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/hash_readwrite_func_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/hash_readwrite_func_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / ipfrag_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/ipfrag_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/ipfrag_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/ipfrag_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/ipfrag_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/ipfrag_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/ipfrag_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/ipfrag_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/ipfrag_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/ipfrag_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / malloc_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/malloc_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/malloc_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/malloc_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/malloc_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/malloc_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/malloc_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/malloc_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/malloc_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/malloc_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / mbuf_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/mbuf_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/mbuf_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/mbuf_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/mbuf_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/mbuf_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/mbuf_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/mbuf_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/mbuf_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/mbuf_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / mcslock_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/mcslock_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/mcslock_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/mcslock_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/mcslock_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/mcslock_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/mcslock_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/mcslock_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/mcslock_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/mcslock_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / memory_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/memory_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/memory_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/memory_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/memory_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/memory_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/memory_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/memory_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/memory_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/memory_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / mempool_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/mempool_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/mempool_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/mempool_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/mempool_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/mempool_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/mempool_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/mempool_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/mempool_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/mempool_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / memzone_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/memzone_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/memzone_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/memzone_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/memzone_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/memzone_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/memzone_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/memzone_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/memzone_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/memzone_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / multiprocess_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/multiprocess_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/multiprocess_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/multiprocess_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/multiprocess_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/multiprocess_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/multiprocess_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/multiprocess_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/multiprocess_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/multiprocess_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / pdcp_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/pdcp_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/pdcp_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/pdcp_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/pdcp_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/pdcp_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/pdcp_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/pdcp_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/pdcp_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/pdcp_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / power_cpufreq_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/power_cpufreq_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/power_cpufreq_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/power_cpufreq_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/power_cpufreq_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/power_cpufreq_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/power_cpufreq_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/power_cpufreq_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/power_cpufreq_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/power_cpufreq_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / power_kvm_vm_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/power_kvm_vm_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/power_kvm_vm_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/power_kvm_vm_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/power_kvm_vm_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/power_kvm_vm_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/power_kvm_vm_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/power_kvm_vm_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/power_kvm_vm_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/power_kvm_vm_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / security_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/security_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/security_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/security_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/security_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/security_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/security_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/security_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/security_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/security_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / stack_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/stack_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/stack_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/stack_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/stack_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/stack_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/stack_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/stack_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/stack_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/stack_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / stack_lf_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/stack_lf_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/stack_lf_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/stack_lf_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/stack_lf_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/stack_lf_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/stack_lf_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/stack_lf_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/stack_lf_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/stack_lf_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / timer_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/timer_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: get_seg_fd(): open '/dev/hugepages/timer_autotestmap_0' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/timer_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/timer_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/timer_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/timer_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/timer_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/timer_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/timer_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed
+
+================================================================================
+DPDK:fast-tests / timer_secondary_autotest: FAIL
+================================================================================
+-------------------------------------stdout-------------------------------------
+Error with EAL initialization, ret = -1
+
+-------------------------------------stderr-------------------------------------
+EAL: Detected CPU lcores: 32
+EAL: Detected NUMA nodes: 8
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /run/user/1000/dpdk/timer_secondary_autotest/mp_socket
+EAL: Selected IOVA mode 'VA'
+EAL: No free 32768 kB hugepages reported on node 0
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/timer_secondary_autotestmap_16384' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/timer_secondary_autotestmap_32768' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/timer_secondary_autotestmap_49152' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/timer_secondary_autotestmap_65536' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/timer_secondary_autotestmap_81920' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/timer_secondary_autotestmap_98304' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: get_seg_fd(): open '/dev/hugepages/timer_secondary_autotestmap_114688' failed: Permission denied
+EAL: Couldn't get fd on hugepage file
+EAL: error allocating rte services array
+EAL: rte_service_init() failed

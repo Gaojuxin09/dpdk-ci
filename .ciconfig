@@ -1,0 +1,10 @@
+# Configuration template to be copied in
+#         /etc/dpdk/ci.config
+#     or  ~/.config/dpdk/ci.config
+#     or  .ciconfig
+
+# The mailer (sendmail, mail, mailx) must support the option -t
+export DPDK_CI_MAILER=/usr/sbin/sendmail
+
+# The pwclient script is part of patchwork and is copied in dpdk-ci
+export DPDK_CI_PWCLIENT=/home/loongson/.dpdk/dpdk-ci/tools/pwclient

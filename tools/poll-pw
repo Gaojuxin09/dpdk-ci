@@ -4,7 +4,7 @@
 # Copyright 2017 6WIND S.A.
 # Copyright 2018 Mellanox Technologies, Ltd
 
-URL=http://patches.dpdk.org/api
+URL=https://patches.dpdk.org/api
 PAUSE_SECONDS=100
 DATA_DIR=$(dirname $(readlink -e $0))/../data
 POLL_TIMES=1
