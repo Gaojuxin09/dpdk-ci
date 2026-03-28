@@ -1,2 +1,13 @@
 .mail_passwd.dat
 .pw_token.dat
+.ciconfig
+.pw_token.dat
+last.txt
+logs/
+series/
+patches/
+reports/
+data/last_recheck.txt
+data/poll_pw_series_ids
+data/rerun_requests.json
+data/base_commits.txt
