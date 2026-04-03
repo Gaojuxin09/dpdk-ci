@@ -76,7 +76,7 @@ send_patch_test_report() {
 
 	check_patch_check $pwid "$label"
 
-	from="gaojuxin@loongson.cn"
+	from="qemudev@loongson.cn"
 	echo "send test report for patch $pwid to $from"
 	$send_patch_report -t "$subject" -f "$from" -m "$msgid" -p "$pwid" \
 		-o "$listid" -l "$label" -s "$status" \
