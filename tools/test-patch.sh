@@ -17,8 +17,8 @@ pw_maintainers_cli=$(dirname $(readlink -e $0))/pw_maintainers_cli.py
 repo_branch_cfg=$(dirname $(readlink -e $0))/../config/repo_branch.cfg
 token_file=$(dirname $(readlink -e $0))/../.pw_token.dat
 
-label_compilation="LoongArch compilation"
-label_unit_testing="LoongArch unit testing"
+label_compilation="loongson-compile-loongarch-abi2"
+label_unit_testing="loongson-unit-loongarch-abi2"
 
 status_warning="WARNING"
 status_failure="FAILURE"
