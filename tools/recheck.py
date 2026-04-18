@@ -112,8 +112,8 @@ def main():
     print("recheck file: " + recheck_file)
 
     try:
-        p = subprocess.run(['/usr/bin/python3', script_path, '-ts', ts, '--contexts', 'loongson-compile-loongarch-abi2',
-            'loongson-unit-loongarch-abi2', '-o', recheck_file], capture_output=True, timeout=240)
+        p = subprocess.run(['/usr/bin/python3', script_path, '-ts', ts, '--contexts', 'loongson-compile-loongarch64',
+            'loongson-unit-loongarch64', '-o', recheck_file], capture_output=True, timeout=240)
     except subprocess.TimeoutExpired:
         print("get reruns timeout!")
         return

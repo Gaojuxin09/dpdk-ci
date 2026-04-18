@@ -20,8 +20,8 @@ repo_branch_cfg_v2=$(dirname $(readlink -e $0))/../config/repo_branch_v2.cfg
 token_file=$(dirname $(readlink -e $0))/../.pw_token.dat
 base_commits_file=$(dirname $(readlink -e $0))/../data/base_commits.txt
 
-label_compilation="loongson-compile-loongarch-abi2"
-label_unit_testing="loongson-unit-loongarch-abi2"
+label_compilation="loongson-compile-loongarch64"
+label_unit_testing="loongson-unit-loongarch64"
 
 status_warning="WARNING"
 status_failure="FAILURE"
