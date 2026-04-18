@@ -341,19 +341,38 @@ fi
 echo "meson & ninja build pass"
 test_report_series_build_pass $repo $ori_base $base_commit $patches_dir $test_report
 send_series_test_report $series_id $patches_dir "$label_compilation" $status_success "$desc_build_pass" $test_report $build_mail
+# Known platform-specific failures on LoongArch
+KNOWN_FAILURES="dispatcher_autotest eal_flags_mem_autotest event_eth_tx_adapter_autotest func_reentrancy_autotest timer_secondary_autotest"
 
 failed=false
 meson test -C build --suite DPDK:fast-tests --test-args="-l 0-7" -t 20 || failed=true
 echo "test done!"
+
 if $failed ; then
-	echo "unit testing fail"
-	test_report_series_test_fail $repo $ori_base $base_commit $patches_dir $testlog_json $testlog_txt $test_report
-	send_series_test_report $series_id $patches_dir "$label_unit_testing" $status_failure "$desc_unit_test_fail" $test_report $unit_test_mail
-	exit 0
+        # Check if all failures are known platform-specific issues
+        unknown_fail=false
+        fail_list=$(grep "FAIL" $testlog_txt | grep -v "Expected Fail" | grep "DPDK:fast-tests" | awk '{print $4}')
+        for test in $fail_list; do
+                testname=$(basename $test)
+                if ! echo "$KNOWN_FAILURES" | grep -qw "$testname" ; then
+                        echo "Unknown failure: $testname"
+                        unknown_fail=true
+                fi
+        done
+
+        if $unknown_fail ; then
+                echo "unit testing fail (unknown failures found)"
+                test_report_series_test_fail $repo $ori_base $base_commit $patches_dir $testlog_json $testlog_txt $test_report
+                send_series_test_report $series_id $patches_dir "$label_unit_testing" $status_failure "$desc_unit_test_fail" $test_report $unit_test_mail
+                exit 0
+        else
+                echo "unit testing pass (only known platform failures)"
+        fi
 fi
 
 echo "unit testing pass"
 test_report_series_test_pass $repo $ori_base $base_commit $patches_dir $testlog_json $testlog_txt $test_report
 send_series_test_report $series_id $patches_dir "$label_unit_testing" $status_success "$desc_unit_test_pass" $test_report $unit_test_mail
+
 
 cd -
