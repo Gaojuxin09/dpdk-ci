@@ -5,8 +5,9 @@
 
 BRANCH_PREFIX=s
 REUSE_PATCH=false
+FORCE_SEND=false
 KEEP_BASE=false
-last_gpr_file="last_gpr.txt"
+last_gpr_file="/home/loongson/.dpdk/dpdk/last_gpr.txt"
 
 parse_email=$(dirname $(readlink -e $0))/../tools/parse-email.sh
 send_series_report=$(dirname $(readlink -e $0))/../tools/send-series-report-la.sh
@@ -58,7 +59,7 @@ check_patch_check() {
 		return;
 	fi
 
-	if echo "$contexts" | grep -qi "$context" ; then
+	if ! $FORCE_SEND && echo "$contexts" | grep -qi "$context" ; then
 	      echo "test report for $pwid from "$context" existed!"
 	else
 	      echo "not found context: "$context""
@@ -168,7 +169,7 @@ try_apply() {
 		fi
 		if $need_update ; then
 			echo "need to update git base"
-			timeout -s SIGKILL 60s git pull --rebase
+			timeout -s SIGKILL 300s git pull --rebase
 			date_now=$(date --utc '+%FT%T')
 			echo $date_now >$last_gpr_file
 		fi
@@ -222,10 +223,11 @@ save_base_commit() {
 	echo "$sid $commit" >> $base_commits_file
 }
 
-while getopts hkr arg ; do
+while getopts hkrf arg ; do
 	case $arg in
 		k ) KEEP_BASE=true ;;
 		r ) REUSE_PATCH=true ;;
+                f ) FORCE_SEND=true ;;
 		h ) print_usage ; exit 0 ;;
 		? ) print_usage >&2 ; exit 1 ;;
 	esac
