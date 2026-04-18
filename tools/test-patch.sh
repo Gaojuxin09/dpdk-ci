@@ -216,7 +216,7 @@ test_report_patch_build_pass $repo $base $base_commit $patch_email $test_report
 send_patch_test_report $patch_email "$label_compilation" $status_success "$desc_build_pass" $test_report
 
 failed=false
-meson test -C build --suite DPDK:fast-tests --test-args="--no-huge -m 2048 -l 0-7" -t 8 || failed=true
+meson test -C build --suite DPDK:fast-tests --test-args="-l 0-7" -t 8 || failed=true
 echo "test done!"
 if $failed ; then
 	echo "unit testing fail"

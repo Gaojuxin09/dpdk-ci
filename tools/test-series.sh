@@ -19,8 +19,8 @@ repo_branch_cfg_v2=$(dirname $(readlink -e $0))/../config/repo_branch_v2.cfg
 token_file=$(dirname $(readlink -e $0))/../.pw_token.dat
 base_commits_file=$(dirname $(readlink -e $0))/../data/base_commits.txt
 
-label_compilation="loongson-compile-loongarch64"
-label_unit_testing="loongson-unit-loongarch64"
+label_compilation="loongson-compile-loongarch-abi2"
+label_unit_testing="loongson-unit-loongarch-abi2"
 
 status_warning="WARNING"
 status_failure="FAILURE"
@@ -341,7 +341,7 @@ test_report_series_build_pass $repo $ori_base $base_commit $patches_dir $test_re
 send_series_test_report $series_id $patches_dir "$label_compilation" $status_success "$desc_build_pass" $test_report $build_mail
 
 failed=false
-meson test -C build --suite DPDK:fast-tests --test-args="--no-huge -m 2048 -l 0-7" -t 20 || failed=true
+meson test -C build --suite DPDK:fast-tests --test-args="-l 0-7" -t 20 || failed=true
 echo "test done!"
 if $failed ; then
 	echo "unit testing fail"
