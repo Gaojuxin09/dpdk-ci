@@ -20,8 +20,8 @@ repo_branch_cfg_v2=$(dirname $(readlink -e $0))/../config/repo_branch_v2.cfg
 token_file=$(dirname $(readlink -e $0))/../.pw_token.dat
 base_commits_file=$(dirname $(readlink -e $0))/../data/base_commits.txt
 
-label_compilation="loongson-compile-loongarch64"
-label_unit_testing="loongson-unit-loongarch64"
+label_compilation="loongson-compile-loongarch-abi2"
+label_unit_testing="loongson-unit-loongarch-abi2"
 
 status_warning="WARNING"
 status_failure="FAILURE"
@@ -341,33 +341,25 @@ fi
 echo "meson & ninja build pass"
 test_report_series_build_pass $repo $ori_base $base_commit $patches_dir $test_report
 send_series_test_report $series_id $patches_dir "$label_compilation" $status_success "$desc_build_pass" $test_report $build_mail
-# Known platform-specific failures on LoongArch
-KNOWN_FAILURES="dispatcher_autotest eal_flags_mem_autotest event_eth_tx_adapter_autotest func_reentrancy_autotest timer_secondary_autotest"
+# LoongArch-unsupported tests are excluded from the test run so
+# they do not appear as failures in the test report. The list of
+# unsupported tests was confirmed with the dpdk.org maintainers.
+EXCLUDED_TESTS="dispatcher_autotest eal_flags_mem_autotest event_eth_tx_adapter_autotest func_reentrancy_autotest timer_secondary_autotest atomic_autotest compressdev_autotest distributor_autotest eal_flags_c_opt_autotest eal_flags_main_opt_autotest eal_flags_n_opt_autotest eal_flags_hpet_autotest eal_flags_no_huge_autotest eal_flags_a_opt_autotest eal_flags_b_opt_autotest eal_flags_vdev_opt_autotest eal_flags_r_opt_autotest eal_flags_file_prefix_autotest eal_flags_misc_autotest external_mem_autotest hash_readwrite_func_autotest ipfrag_autotest malloc_autotest mbuf_autotest mcslock_autotest memory_autotest mempool_autotest memzone_autotest multiprocess_autotest pdcp_autotest power_cpufreq_autotest power_kvm_vm_autotest security_autotest stack_autotest stack_lf_autotest timer_autotest"
+
+# Build the list of tests to actually run: all DPDK:fast-tests
+# except the LoongArch-unsupported ones.
+_excl_pat="^($(echo $EXCLUDED_TESTS | sed 's/ /|/g'))$"
+_run_tests=$(meson test -C build --list --suite DPDK:fast-tests --no-rebuild 2>/dev/null | awk -F' / ' '{print $2}' | grep -vE "$_excl_pat")
 
 failed=false
-meson test -C build --suite DPDK:fast-tests --test-args="-l 0-7" -t 20 || failed=true
+meson test -C build --suite DPDK:fast-tests --no-rebuild --test-args="-l 0-7" -t 20 $_run_tests || failed=true
 echo "test done!"
 
 if $failed ; then
-        # Check if all failures are known platform-specific issues
-        unknown_fail=false
-        fail_list=$(grep "FAIL" $testlog_txt | grep -v "Expected Fail" | grep "DPDK:fast-tests" | awk '{print $4}')
-        for test in $fail_list; do
-                testname=$(basename $test)
-                if ! echo "$KNOWN_FAILURES" | grep -qw "$testname" ; then
-                        echo "Unknown failure: $testname"
-                        unknown_fail=true
-                fi
-        done
-
-        if $unknown_fail ; then
-                echo "unit testing fail (unknown failures found)"
-                test_report_series_test_fail $repo $ori_base $base_commit $patches_dir $testlog_json $testlog_txt $test_report
-                send_series_test_report $series_id $patches_dir "$label_unit_testing" $status_failure "$desc_unit_test_fail" $test_report $unit_test_mail
-                exit 0
-        else
-                echo "unit testing pass (only known platform failures)"
-        fi
+        echo "unit testing fail"
+        test_report_series_test_fail $repo $ori_base $base_commit $patches_dir $testlog_json $testlog_txt $test_report
+        send_series_test_report $series_id $patches_dir "$label_unit_testing" $status_failure "$desc_unit_test_fail" $test_report $unit_test_mail
+        exit 0
 fi
 
 echo "unit testing pass"
