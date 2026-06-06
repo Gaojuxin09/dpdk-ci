@@ -178,6 +178,25 @@ write_test_result_pass() {
 	$parse_testlog --summary $1 $2
 }
 
+write_excluded_tests() {
+	# Only output the list if the test scripts exported the
+	# LOONGSON_EXCLUDED_TESTS env var. This keeps the helper
+	# generic for other CI labs that source gen-test-report.sh.
+	if [ -z "$LOONGSON_EXCLUDED_TESTS" ] ; then
+		return
+	fi
+
+	echo ""
+	echo "LoongArch-unsupported tests NOT executed in this run"
+	echo "(known architecture limitations, confirmed with the dpdk.org maintainers):"
+	echo ""
+
+	# Print one test name per line, alphabetized for stable diffs
+	for t in $LOONGSON_EXCLUDED_TESTS ; do
+		echo "  - $t"
+	done
+}
+
 test_report_patch_apply_fail() {
 	repo=$1
 	branch=$2
@@ -271,6 +290,7 @@ test_report_patch_test_fail() {
 	echo ""
 	write_env_result_unit_test_fail
 	write_test_result_fail $testlog_json $testlog_txt
+	write_excluded_tests
 	) | cat - > $report
 }
 
@@ -290,6 +310,7 @@ test_report_patch_test_pass() {
 	echo ""
 	write_env_result_unit_test_pass
 	write_test_result_pass $testlog_json $testlog_txt
+	write_excluded_tests
 	) | cat - > $report
 }
 
@@ -423,6 +444,7 @@ test_report_series_test_fail() {
 	echo ""
 	write_env_result_unit_test_fail
 	write_test_result_fail $testlog_json $testlog_txt
+	write_excluded_tests
 	) | cat - > $report
 }
 
@@ -451,5 +473,6 @@ test_report_series_test_pass() {
 	echo ""
 	write_env_result_unit_test_pass
 	write_test_result_pass $testlog_json $testlog_txt
+	write_excluded_tests
 	) | cat - > $report
 }
