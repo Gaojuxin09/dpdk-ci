@@ -166,7 +166,9 @@ if git status | grep -q "git am --abort" ; then
        git am --abort
 fi
 
-git checkout $base
+git checkout unused
+git branch -D $base 2>/dev/null || true
+git checkout origin/$base -b $base
 git pull --rebase
 base_commit=`git log -1 --format=oneline |awk '{print $1}'`
 

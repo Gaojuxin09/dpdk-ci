@@ -156,7 +156,7 @@ try_apply() {
 	fi
 
 	git checkout unused
-	git branch -D $base
+	git branch -D $base 2>/dev/null || true
 	git checkout origin/$base -b $base
 
 	if ! $KEEP_BASE ; then
